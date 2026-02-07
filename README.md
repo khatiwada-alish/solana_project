@@ -1,2 +1,2 @@
-# solana_wallet
+# solana_web
 bounty project, Superteam Neapl
