@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Solana Color Palette */
+    --background: 240 14% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 14% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 14% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 278 95% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 14% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 14% 16%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 159 100% 50%;
+    --accent-foreground: 240 14% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 14% 20%;
+    --input: 240 14% 20%;
+    --ring: 278 95% 58%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(278 95% 58%), hsl(159 100% 50%));
+    --gradient-glow: linear-gradient(135deg, hsl(278 95% 58% / 0.3), hsl(159 100% 50% / 0.3));
+    --gradient-card: linear-gradient(145deg, hsl(240 14% 12%), hsl(240 14% 10%));
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(278 95% 58% / 0.15), transparent);
+
+    --shadow-glow: 0 0 60px -15px hsl(278 95% 58% / 0.5);
+    --shadow-card: 0 8px 32px -8px hsl(240 50% 4% / 0.5);
+    --shadow-button: 0 4px 24px -4px hsl(278 95% 58% / 0.6);
+
+    --glass-bg: hsl(240 14% 12% / 0.6);
+    --glass-border: hsl(240 14% 24% / 0.5);
+
+    --sidebar-background: 240 14% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 278 95% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 14% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 14% 20%;
+    --sidebar-ring: 278 95% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 20px hsl(278 95% 58% / 0.3);
+    }
+
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 40px hsl(278 95% 58% / 0.5);
+    }
+  }
+}
+
+.wallet-adapter-button {
+  background: var(--gradient-primary) !important;
+  color: hsl(0 0% 100%) !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: hsl(240 14% 10%) !important;
+}
+
+.wallet-adapter-modal-container {
+  background: hsl(240 14% 12%) !important;
+}
