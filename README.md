@@ -59,4 +59,4 @@ yarn dev
 
 ```
 ---
-this is just a simple concept project and is made with AI basically i am not a super genious to do everything by myself , i am just a student in 1st semester 
+This is my first real Web3 project — made as a 1st-semester student at **Samriddhi College** using a lot of AI assistance. I'm not claiming to be an expert; this is me learning Solana step-by-step and exploring how blockchain could help Nepal in the future.
